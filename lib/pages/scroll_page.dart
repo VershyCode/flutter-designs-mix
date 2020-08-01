@@ -27,8 +27,11 @@ class Scrollpage extends StatelessWidget {
   }
 
   Widget _pagina2() {
-    return Center(
-      child: Text('pagina 2'),
+    return Stack(
+      children: <Widget>[
+        _colorFondo(),
+        _botonPag2(),
+      ],
     );
   }
 
@@ -62,6 +65,25 @@ class Scrollpage extends StatelessWidget {
           Expanded(child: Container()),
           Icon(Icons.keyboard_arrow_down, size: 70.0, color: Colors.white),
         ],
+      ),
+    );
+  }
+
+  Widget _botonPag2() {
+    return Center(
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(20.0),
+        child: FlatButton(
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Text(
+              'Bienvenido', 
+              style: TextStyle(fontSize: 40.0, color: Colors.white)
+            ),
+          ),
+          color: Colors.blue,
+          onPressed: (){},
+        ),
       ),
     );
   }
