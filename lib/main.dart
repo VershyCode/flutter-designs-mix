@@ -1,4 +1,5 @@
 import 'package:designs/pages/basico_page.dart';
+import 'package:designs/pages/scroll_page.dart';
 import 'package:flutter/material.dart';
  
 void main() => runApp(MyApp());
@@ -9,9 +10,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Material App',
       debugShowCheckedModeBanner: false,
-      initialRoute: 'basico',
+      initialRoute: 'scroll',
       routes: {
         'basico'  : (BuildContext context) => BasicoPage(),
+        'scroll'  : (BuildContext context) => Scrollpage()
       },
     );
   }
