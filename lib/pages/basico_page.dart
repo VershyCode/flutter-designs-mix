@@ -26,31 +26,37 @@ class BasicoPage extends StatelessWidget {
   }
 
   Widget _crearImagen() {
-    return Image(
-      image: NetworkImage('http://3.bp.blogspot.com/-eqQBjnvk_Ag/T3Ck94n4X7I/AAAAAAAAIVw/iWs_k7-eDnk/s1600/9975087.jpg'),
+    return Container(
+      width: double.infinity,
+      child: Image(
+        fit: BoxFit.cover,
+        image: NetworkImage('http://3.bp.blogspot.com/-eqQBjnvk_Ag/T3Ck94n4X7I/AAAAAAAAIVw/iWs_k7-eDnk/s1600/9975087.jpg'),
+      ),
     );
   }
 
  Widget _crearDescripcion() {
-   return Container(
-    padding: EdgeInsets.symmetric(horizontal: 30.0, vertical: 20.0),
-    child: Row(
-      children: <Widget>[
-        Expanded(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+   return SafeArea(
+        child: Container(
+          padding: EdgeInsets.symmetric(horizontal: 30.0, vertical: 20.0),
+          child: Row(
             children: <Widget>[
-              Text('Mi paisaje', style: estiloTitulo),
-              SizedBox(height: 7.0),
-              Text('Un paisaje en Mexico', style: estiloSubtitulo,)
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    Text('Mi paisaje', style: estiloTitulo),
+                    SizedBox(height: 7.0),
+                    Text('Un paisaje en Mexico', style: estiloSubtitulo,)
+                  ],
+                ),
+              ),
+              Icon(Icons.star, color: Colors.red, size: 30.0),
+              Text('41', style: TextStyle(fontSize: 20.0)),
             ],
           ),
-        ),
-        Icon(Icons.star, color: Colors.red, size: 30.0),
-        Text('41', style: TextStyle(fontSize: 20.0)),
-      ],
-    ),
-  );
+      ),
+   );
  }
 
  Widget _crearAcciones() {
@@ -75,11 +81,13 @@ class BasicoPage extends StatelessWidget {
  }
 
   Widget _crearTexto() {
-    return Container(
-      padding: EdgeInsets.symmetric(horizontal: 40.0, vertical: 20.0),
-      child: Text(
-        'Adipisicing adipisicing laborum incididunt tempor amet qui ullamco laborum sunt anim ullamco do. Labore cupidatat irure eiusmod occaecat dolore laboris incididunt ea ex. Duis ex culpa laboris voluptate aliqua nulla enim dolore non occaecat minim exercitation esse. Nisi ad ex exercitation non consequat elit voluptate ex fugiat aliquip.',
-        textAlign: TextAlign.justify,
+    return SafeArea(
+      child: Container(
+        padding: EdgeInsets.symmetric(horizontal: 40.0, vertical: 20.0),
+        child: Text(
+          'Adipisicing adipisicing laborum incididunt tempor amet qui ullamco laborum sunt anim ullamco do. Labore cupidatat irure eiusmod occaecat dolore laboris incididunt ea ex. Duis ex culpa laboris voluptate aliqua nulla enim dolore non occaecat minim exercitation esse. Nisi ad ex exercitation non consequat elit voluptate ex fugiat aliquip.',
+          textAlign: TextAlign.justify,
+        ),
       ),
     );
   }
