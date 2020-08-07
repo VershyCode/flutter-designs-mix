@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 class BotonesPage extends StatelessWidget {
@@ -13,6 +15,7 @@ class BotonesPage extends StatelessWidget {
   }
 
   Widget _fondoApp() {
+
     final gradiente = Container(
       width: double.infinity,
       height: double.infinity,
@@ -27,9 +30,33 @@ class BotonesPage extends StatelessWidget {
         )
       ),
     );
+
+    final cajaRosa = Transform.rotate(
+      angle: -pi / 5.0,
+      child: Container(
+        height: 310.0,
+        width: 310.0,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(80.0),
+          color: Colors.pink,
+          gradient: LinearGradient(
+            colors: [
+              Color.fromRGBO(236, 98, 188, 1.0),
+              Color.fromRGBO(241, 142, 172, 1.0)
+            ]
+          )
+        ),
+      )
+    );
+
+
     return Stack(
       children: <Widget>[
-        gradiente
+        gradiente,
+        Positioned(
+          child: cajaRosa,
+          top: -80,
+        ),
       ],
     );
   }
