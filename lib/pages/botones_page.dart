@@ -20,6 +20,23 @@ class BotonesPage extends StatelessWidget {
           )
         ],
       ),
+      bottomNavigationBar: BottomNavigationBar(
+        fixedColor: Colors.pink,
+        items: <BottomNavigationBarItem> [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.calendar_today),
+            title: Container()
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.pie_chart_outlined),
+            title: Container()
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.supervised_user_circle),
+            title: Container()
+          ),
+        ],
+      ),
     );
   }
 
